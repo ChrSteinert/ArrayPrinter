@@ -127,7 +127,7 @@ let printArray (options : PrinterOptions) (bytes : byte array) =
           if i >= bytes.Length then ' '
           else 
             let c = bytes.[i] |> int |> char
-            if Char.IsAsciiLetterOrDigit c || Char.IsPunctuation c then c else options.DataPlaceholderChar
+            if Char.IsLetterOrDigit c || Char.IsPunctuation c then c else options.DataPlaceholderChar
         )
         |> builder.Append
         |> ignore
