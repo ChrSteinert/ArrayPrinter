@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E71D7A6E-B0A7-46F4-BE8D-0702AEF98C51}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ArrayPrinter.Core", "src\ArrayPrinter.Core\ArrayPrinter.Core.fsproj", "{5656CF2A-BC53-4BBF-B2C8-2A1423948C85}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ArrayPrinter", "src\ArrayPrinter\ArrayPrinter.fsproj", "{A279536B-C91C-4984-BDC2-CE78A023939B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5656CF2A-BC53-4BBF-B2C8-2A1423948C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5656CF2A-BC53-4BBF-B2C8-2A1423948C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5656CF2A-BC53-4BBF-B2C8-2A1423948C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5656CF2A-BC53-4BBF-B2C8-2A1423948C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A279536B-C91C-4984-BDC2-CE78A023939B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A279536B-C91C-4984-BDC2-CE78A023939B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A279536B-C91C-4984-BDC2-CE78A023939B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A279536B-C91C-4984-BDC2-CE78A023939B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5656CF2A-BC53-4BBF-B2C8-2A1423948C85} = {E71D7A6E-B0A7-46F4-BE8D-0702AEF98C51}
+		{A279536B-C91C-4984-BDC2-CE78A023939B} = {E71D7A6E-B0A7-46F4-BE8D-0702AEF98C51}
+	EndGlobalSection
+EndGlobal
