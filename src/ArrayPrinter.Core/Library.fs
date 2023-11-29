@@ -17,7 +17,7 @@ type PrinterOptions =
     WithHeader : bool
     WithData : bool
     NumberFormat : NumberType
-    ColumnWidth : byte
+    RowWidth : byte
     DataPlaceholderChar : char
   }
   
@@ -26,7 +26,7 @@ type PrinterOptions =
       WithHeader = true
       WithData = true
       NumberFormat = Hex
-      ColumnWidth = 16uy
+      RowWidth = 16uy
       DataPlaceholderChar = '.'
     }
     
@@ -35,7 +35,7 @@ type PrinterOptions =
       WithHeader = true
       WithData = true
       NumberFormat = Binary
-      ColumnWidth = 4uy
+      RowWidth = 4uy
       DataPlaceholderChar = '.'
     }
 
@@ -44,7 +44,7 @@ type PrinterOptions =
       WithHeader = true
       WithData = true
       NumberFormat = Decimal
-      ColumnWidth = 10uy
+      RowWidth = 10uy
       DataPlaceholderChar = '.'
     }
 
@@ -53,7 +53,7 @@ type PrinterOptions =
       WithHeader = true
       WithData = true
       NumberFormat = Octal
-      ColumnWidth = 8uy
+      RowWidth = 8uy
       DataPlaceholderChar = '.'
     }
 
@@ -100,18 +100,18 @@ let private emptyCell =
 let printArray (options : PrinterOptions) (bytes : byte array) =
   let builder = new StringBuilder ()
 
-  for row in [0..bytes.Length / (int options.ColumnWidth)] do
+  for row in [0..bytes.Length / (int options.RowWidth)] do
     if options.WithHeader 
     then 
-      (row * int options.ColumnWidth) |> formatHeaderNumber options.NumberFormat
+      (row * int options.RowWidth) |> formatHeaderNumber options.NumberFormat
       |> builder.Append |> ignore
       // After Row Header Padding
       builder.Append " " |> ignore
       
-    for col in [0..(int options.ColumnWidth - 1)] do
+    for col in [0..(int options.RowWidth - 1)] do
       // Before Cell Padding
       builder.Append " " |> ignore
-      let i = row * (int options.ColumnWidth) + col
+      let i = row * (int options.RowWidth) + col
       if i >= bytes.Length then emptyCell options.NumberFormat
       else bytes.[i] |> formatNumber options.NumberFormat
       |> builder.Append
@@ -121,8 +121,8 @@ let printArray (options : PrinterOptions) (bytes : byte array) =
     if options.WithData then
       // Before Data Padding
       builder.Append "  " |> ignore
-      for col in [0..(int options.ColumnWidth - 1)] do
-        let i = row * (int options.ColumnWidth) + col
+      for col in [0..(int options.RowWidth - 1)] do
+        let i = row * (int options.RowWidth) + col
         (
           if i >= bytes.Length then ' '
           else 

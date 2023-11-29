@@ -1,10 +1,14 @@
 ﻿
-let query = "MXsBAAABAAAAAAAABWZyaXR6A2JveAAAAQAB" |> System.Convert.FromBase64String
+open ArrayPrinter
+
+let myArray = "eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ==" |> System.Convert.FromBase64String
 
 [<EntryPoint>]
 let main _ =
-    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.defaults) query |> printfn "%s"
-    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.ocalDefaults) query |> printfn "%s"
-    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.decimalDefaults) query |> printfn "%s"
-    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.binaryDefaults) query |> printfn "%s"
+    myArray |> printfn "%A"
+    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.defaults) myArray |> printfn "%s"
+    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.ocalDefaults) myArray |> printfn "%s"
+    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.decimalDefaults) myArray |> printfn "%s"
+    ArrayPrinter.printArray (ArrayPrinter.PrinterOptions.binaryDefaults) myArray |> printfn "%s"
+    ArrayPrinter.printArray ({ PrinterOptions.defaults with WithData = false }) myArray |> printfn "%s"
     0
