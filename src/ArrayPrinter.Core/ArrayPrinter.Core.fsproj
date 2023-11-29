@@ -1,8 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>ArrayPrinter</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Christian Steinert</Authors>
+    <Product>ArrayPrinter</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>F# library to make human readable byte array formats.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/ChrSteinert/ArrayPrinter</PackageProjectUrl>
+    <PackageTags>F#;printig;formatting;bytearrays</PackageTags>
+    <RepositoryUrl>https://github.com/ChrSteinert/ArrayPrinter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
